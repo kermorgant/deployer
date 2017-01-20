@@ -14,6 +14,7 @@ task('deploy:shared', function () {
     $sharedPath = "{{deploy_path}}/shared";
 
     // Validate shared_dir, find duplicates
+/*
     foreach (get('shared_dirs') as $a) {
         foreach (get('shared_dirs') as $b) {
             if ($a !== $b && strpos($a, $b) === 0) {
@@ -21,7 +22,7 @@ task('deploy:shared', function () {
             }
         }
     }
-
+*/
     foreach (get('shared_dirs') as $dir) {
         // Check if shared dir does not exists.
         if (!test("[ -d $sharedPath/$dir ]")) {
